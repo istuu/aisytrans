@@ -1,23 +1,18 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: DanielSimangunsong
- * Date: 1/17/2017
- * Time: 2:08 PM
- */ ?>
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@yield('meta-title', $metaTitle )</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Favicon -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="user-scalable = yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="@yield('meta-description', $metaDescription )">
+	<meta name="keywords" content="Travel, Vacation, Packet">
+	<meta name="author" content="Danang Istu Nugroho">
+
+	<title>@yield('meta-title', $metaTitle )</title>
+
+    <!--================================FAVICON================================-->
     <link rel="shortcut icon" type="images/x-icon" href="{{ URL::asset(Wa::config('system.favicon')) }}"/>
-    <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="{{URL::asset('vendor/webarq/admin-lte/bootstrap/css/bootstrap.min.css')}}">
-    <!-- Font Awesome -->
+
 
     <!-- Enable/Disabled browser system cache -->
     @if (1 === (int) Wa::config('system.site.cache'))
@@ -28,129 +23,113 @@
         <meta http-equiv="pragma" content="no-cache"/>
     @endif
 
-    @if ('locale' === getenv('APP_ENV'))
-        <link rel="stylesheet" href="{{URL::asset('vendor/webarq/admin-lte/dev-only/font-awesome.min.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('vendor/webarq/admin-lte/dev-only/ionicons.min.css')}}">
-    @else
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-        @endif
-                <!-- Theme style -->
-        <link rel="stylesheet" href="{{URL::asset('vendor/webarq/admin-lte/dist/css/AdminLTE.min.css')}}">
-        <!-- AdminLTE Skins. Choose a skin from the css/skins
-             folder instead of downloading all of them to reduce the load. -->
-        <link rel="stylesheet" href="{{URL::asset('vendor/webarq/admin-lte/dist/css/skins/_all-skins.min.css')}}">
-        <!-- iCheck -->
-        <link rel="stylesheet" href="{{URL::asset('vendor/webarq/admin-lte/plugins/iCheck/flat/blue.css')}}">
-        <!-- Morris chart -->
-        <link rel="stylesheet" href="{{URL::asset('vendor/webarq/admin-lte/plugins/morris/morris.css')}}">
-        <!-- jvectormap -->
-        <link rel="stylesheet"
-              href="{{URL::asset('vendor/webarq/admin-lte/plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}">
-        <!-- Date Picker -->
-        <link rel="stylesheet" href="{{URL::asset('vendor/webarq/admin-lte/plugins/datepicker/datepicker3.css')}}">
-        <!-- Daterange picker -->
-        <link rel="stylesheet"
-              href="{{URL::asset('vendor/webarq/admin-lte/plugins/daterangepicker/daterangepicker.css')}}">
-        <!-- bootstrap wysihtml5 - text editor -->
-        <link rel="stylesheet"
-              href="{{URL::asset('vendor/webarq/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+    <!--================================BOOTSTRAP STYLE SHEETS================================-->
 
-        @stack('view-style')
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend') }}/bootstrap/css/bootstrap.min.css">
 
-                <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <!--================================ Main STYLE SHEETs====================================-->
+
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend') }}/css/style.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend') }}/css/menu.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend') }}/css/color/color.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend') }}/assets/testimonial/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend') }}/assets/testimonial/css/elastislide.css" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend') }}/css/responsive.css">
+
+	<!--================================FONTAWESOME==========================================-->
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend') }}/css/font-awesome.css">
+
+	<!--================================GOOGLE FONTS=========================================-->
+	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:300,400,700,900'>
+
+	<!--================================SLIDER REVOLUTION =========================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend') }}/assets/revolution_slider/css/revslider.css" media="screen" />
+
+    @stack('view-style')
+
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-    {!! Wa::getThemesView($shareThemes, 'common.header') !!}
+<body>
+    <div class="preloader"><span class="preloader-gif"></span></div>
+	<div class="theme-wrap clearfix">
+        <!--================================responsive log and menu==========================================-->
+		<div class="wsmenucontent overlapblackbg"></div>
+		<div class="wsmenuexpandermain slideRight">
+			<a id="navToggle" class="animated-arrow slideLeft"><span></span></a>
+			<a href="#" class="smallogo"><img src="{{ asset('frontend') }}/images/logo.png" width="120" alt="" /></a>
+		</div>
 
-    {!! Wa::getThemesView($shareThemes, 'common.sidebar') !!}
-
-    <div class="content-wrapper">
-        <section class="content-header">
-            @if (class_exists('Wl') && !empty(Wa::menu()->getActive()))
-                @foreach (Wl::getCodes() as $code)
-                    {{--@if ($code !== app()->getLocale())--}}
-                    @set(activeURL, Wa::menu()->getActive()->eloquent()->trans('permalink', $code))
-                    @if (isset($shareDetail) && $shareDetail instanceof \Illuminate\Database\Eloquent\Model && $shareDetail->count())
-                        @if (null !== Wa::menu()->getSegment('markup.key'))
-                            @set(activeURL, $activeURL . '/' . Wa::menu()->getSegment('markup.key'))
-                        @endif
-                        @set(activeURL, $activeURL . '/' . $shareDetail->trans('permalink', $code))
-                    @else
-                    @endif
-                    <a href="{{ URL::trans($activeURL, [], null, $code) }}"> {{ strtoupper($code) }}</a>
-                    {{--@endif--}}
-                @endforeach
-            @endif
-
-            <div class="breadcrumb">
-                <span class="fa fa-folder-open"></span>
-                {!! Wa::menu()->breadcrumb() !!}
-            </div>
-        </section>
-
-        <section class="content">
-            @yield('content')
-        </section>
+        {!! Wa::getThemesView($shareThemes, 'common.header') !!}
+        @yield('content')
+        {!! Wa::getThemesView($shareThemes, 'common.footer') !!}
     </div>
 
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-        </div>
-        {!! Wa::config('system.site.copyright', '&copy; ' . date('Y') . ' WEBARQ. All Rights Reserved') !!}
-    </footer>
+    <!--================================JQuery===========================================-->
 
-    <!-- Control Sidebar -->
-    {{--{!! Wa::getThemesView('admin-lte', 'common.control-sidebar') !!}--}}
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-         immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
+	<script type="text/javascript" src="{{ asset('frontend') }}/js/jquery-1.11.3.min.js"></script>
+	<script src="{{ asset('frontend') }}/js/jquery.js"></script><!-- jquery 1.11.2 -->
+	<script src="{{ asset('frontend') }}/js/jquery.easing.min.js"></script>
+	<script src="{{ asset('frontend') }}/js/modernizr.custom.js"></script>
 
-</div>
-<!-- ./wrapper -->
+	<!--================================BOOTSTRAP===========================================-->
 
-<!-- jQuery 2.2.3 -->
-<script src="{{URL::asset('vendor/webarq/admin-lte/plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="{{URL::asset('vendor/webarq/admin-lte/bootstrap/js/bootstrap.min.js')}}"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="{{URL::asset('vendor/webarq/admin-lte/plugins/morris/morris.min.js')}}"></script>
-<!-- Sparkline -->
-<script src="{{URL::asset('vendor/webarq/admin-lte/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
-<!-- jvectormap -->
-<script src="{{URL::asset('vendor/webarq/admin-lte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-<script src="{{URL::asset('vendor/webarq/admin-lte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{URL::asset('vendor/webarq/admin-lte/plugins/knob/jquery.knob.js')}}"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="{{URL::asset('vendor/webarq/admin-lte/plugins/daterangepicker/daterangepicker.js')}}"></script>
-<!-- datepicker -->
-<script src="{{URL::asset('vendor/webarq/admin-lte/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="{{URL::asset('vendor/webarq/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
-<!-- Slimscroll -->
-<script src="{{URL::asset('vendor/webarq/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
-<!-- FastClick -->
-<script src="{{URL::asset('vendor/webarq/admin-lte/plugins/fastclick/fastclick.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{URL::asset('vendor/webarq/admin-lte/dist/js/app.min.js')}}"></script>
-{{-- AdminLTE dashboard demo (This is only for demo purposes) --}}
-{{--<script src="{{URL::asset('vendor/webarq/admin-lte/dist/js/pages/dashboard.js')}}"></script>--}}
-{{-- AdminLTE for demo purposes --}}
-{{--<script src="{{URL::asset('vendor/webarq/admin-lte/dist/js/demo.js')}}"></script>--}}
-@stack('view-script')
+	<script src="{{ asset('frontend') }}/bootstrap/js/bootstrap.min.js"></script>
+
+	<!--================================NAVIGATION===========================================-->
+
+	<script type="text/javascript" src="{{ asset('frontend') }}/js/menu.js"></script>
+
+	<!--================================SLIDER REVOLUTION===========================================-->
+
+	<script type="text/javascript" src="{{ asset('frontend') }}/assets/revolution_slider/js/revolution-slider-tool.js"></script>
+	<script type="text/javascript" src="{{ asset('frontend') }}/assets/revolution_slider/js/revolution-slider.js"></script>
+
+	<!--================================OWL CARESOUL=============================================-->
+
+	<script src="{{ asset('frontend') }}/js/owl.carousel.js"></script>
+    <script src="{{ asset('frontend') }}/js/triger.js" type="text/javascript"></script>
+
+	<!--================================FunFacts Counter===========================================-->
+
+	<script src="{{ asset('frontend') }}/js/jquery.countTo.js"></script>
+
+	<!--================================jquery cycle2=============================================-->
+
+	<script src="{{ asset('frontend') }}/js/jquery.cycle2.min.js" type="text/javascript"></script>
+
+	<!--================================waypoint===========================================-->
+
+	<script type="text/javascript" src="js/jquery.waypoints.min.js"></script><!-- Countdown JS FILE -->
+
+	<!--================================RATINGS===========================================-->
+
+	<script src="{{ asset('frontend') }}/js/jquery.raty-fa.js"></script>
+	<script src="{{ asset('frontend') }}/js/rate.js"></script>
+
+	<!--================================ testimonial ===========================================-->
+	<script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">
+
+			<div class="rg-image-wrapper">
+				<div class="rg-image"></div>
+				<div class="rg-caption-wrapper">
+					<div class="rg-caption" style="display:none;">
+						<p></p>
+						<h5></h5>
+						<div class="caption-metas">
+							<p class="position"></p>
+							<p class="orgnization"></p>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</script>
+	<script type="text/javascript" src="{{ asset('frontend') }}/assets/testimonial/js/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="{{ asset('frontend') }}/assets/testimonial/js/jquery.elastislide.js"></script>
+	<script type="text/javascript" src="{{ asset('frontend') }}/assets/testimonial/js/gallery.js"></script>
+
+	<!--================================custom script===========================================-->
+
+	<script type="text/javascript" src="{{ asset('frontend') }}/js/custom.js"></script>
 </body>
 </html>
-

@@ -29,11 +29,12 @@ return [
                                                 'mimes' => ['png', 'jpg', 'jpeg', 'gif'],
                                                 'max' => 200,
                                                 'resize' => [
-                                                        'width' => 145,
-                                                        'height' => 70
+                                                        'width' => 190,
+                                                        'height' => 114
                                                 ],
-                                                'preview' => true
-                                        ]
+                                        ],
+                                        'id'=>'logo',
+                                        'container'=>'form.images'
                                 ],
                                 'cmsTitle' => [
                                         'type' => 'text'
@@ -48,8 +49,9 @@ return [
                                                 'mimes' => ['png', 'ico'],
                                                 'max' => 1024,
                                                 'file-name' => 'favicon',
-                                                'preview' => 16
-                                        ]
+                                        ],
+                                        'id'=>'favicon',
+                                        'container'=>'form.images'
                                 ],
 // Site block
                                 'lang' => [
@@ -68,11 +70,28 @@ return [
                                                 'upload-dir' => 'site/uploads/logo',
                                                 'max' => 1024,
                                                 'resize' => [
-                                                        'width' => 131,
-                                                        'height' => 52
+                                                        'width' => 190,
+                                                        'height' => 114
                                                 ],
-                                                'preview' => true
-                                        ]
+                                        ],
+                                        'id'=>'siteLogo',
+                                        'container'=>'form.images'
+                                ],
+                                'siteLoginBackground' => [
+                                        'title' => 'Login Background',
+                                        'info' => 'Please use image in 1920px X 1080px dimension',
+                                        'file' => [
+                                                'type' => 'image',
+                                                'mimes' => ['png', 'jpg', 'jpeg'],
+                                                'upload-dir' => 'site/uploads/logo',
+                                                'max' => 1024,
+                                                'resize' => [
+                                                        'width' => 1920,
+                                                        'height' => 1080
+                                                ],
+                                        ],
+                                        'id'=>'background',
+                                        'container'=>'form.images'
                                 ],
                                 'siteMetaTitle' => [
                                         'type' => 'text',
