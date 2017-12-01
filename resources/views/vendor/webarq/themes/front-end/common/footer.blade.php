@@ -4,10 +4,10 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12 margin-bottom-30">
                     <div class="footer-widget-title">
-                        <h5>LATEST NEWS</h5>
+                        <h5>ABOUT US</h5>
                     </div>
                     <div class="footer-logo">
-                        <a href="#"><img src="images/footer-logo.png" alt="footer logo"></a>
+                        <a href="#"><img src="{{ asset(Wa::config('system.site.footer.logo')) }}" alt="footer logo"></a>
                     </div>
                     <div class="footer-intro">
                         <p>Lorem ipsum dolor sit amet sectetuer
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 margin-bottom-30">
+                <!-- <div class="col-md-4 col-sm-4 col-xs-12 margin-bottom-30">
                     <div class="footer-widget-title">
                         <h5>Flikr Photos</h5>
                     </div>
@@ -71,7 +71,7 @@
                             <li><a href="#"><img src="images/news/flikr/06.jpg" alt="flikr photo"></a></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div><!-- .container end -->
@@ -81,18 +81,15 @@
                 <div class="col-md-8 col-sm-12 col-xs-12 pull-right margin-bottom-20">
                     <nav class="footer-menu wsmenu clearfix">
                         <ul class="wsmenu-list pull-right">
-                          <li><a href="#" class="">Home</a></li>
-                          <li><a href="#">features <span class="arrow"></span></a></li>
-                          <li><a href="#">categories <span class="arrow"></span></a></li>
-                          <li><a href="#">listings <span class="arrow"></span></a></li>
-                          <li><a href="#">pages <span class="arrow"></span></a></li>
-                          <li><a href="#">Contact Us <span class="arrow"></span></a></li>
+                            @foreach(Wa::menu()->footer() as $menu)
+                                <li><a href="{{ url($menu->permalink) }}" class="">{{ $menu->title }}</a></li>
+                            @endforeach
                         </ul>
                     </nav>
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12 pull-left margin-bottom-20">
                     <div class="footer-copyright">
-                        <p>&copy; 2016 All Rights Reserved @ <a href="http://designsvilla.com" target="_blank">Designsvilla</a></p>
+                        <p>{!! Wa::config('system.site.copyright') !!}</p>
                     </div>
                 </div>
             </div>

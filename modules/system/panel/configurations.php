@@ -63,10 +63,26 @@ return [
                                 ],
                                 'siteLogo' => [
                                         'title' => 'Logo',
-                                        'info' => 'Please use image in 131px X 52px dimension',
+                                        'info' => 'Please use image in 171px X 53px dimension',
                                         'file' => [
                                                 'type' => 'image',
-                                                'mimes' => ['png', 'ico'],
+                                                'mimes' => ['png', 'jpg','jpeg'],
+                                                'upload-dir' => 'site/uploads/logo',
+                                                'max' => 1024,
+                                                'resize' => [
+                                                        'width' => 171,
+                                                        'height' => 53
+                                                ],
+                                        ],
+                                        'id'=>'siteLogo',
+                                        'container'=>'form.images'
+                                ],
+                                'siteFooterLogo' => [
+                                        'title' => 'Footer Logo',
+                                        'info' => 'Please use image in 190px X 114px dimension',
+                                        'file' => [
+                                                'type' => 'image',
+                                                'mimes' => ['png', 'jpg','jpeg'],
                                                 'upload-dir' => 'site/uploads/logo',
                                                 'max' => 1024,
                                                 'resize' => [
@@ -74,7 +90,7 @@ return [
                                                         'height' => 114
                                                 ],
                                         ],
-                                        'id'=>'siteLogo',
+                                        'id'=>'footer',
                                         'container'=>'form.images'
                                 ],
                                 'siteLoginBackground' => [
@@ -102,9 +118,19 @@ return [
                                         'type' => 'textarea',
                                         'title' => 'Meta Description'
                                 ],
+                                'siteEmail' => [
+                                        'type' => 'text',
+                                        'rules' => 'required|max:150',
+                                        'title' => 'Email Address'
+                                ],
+                                'sitePhone' => [
+                                        'type' => 'text',
+                                        'rules' => 'required|max:150',
+                                        'title' => 'Phone Number'
+                                ],
                                 'siteCopyright' => [
                                         'type' => 'text',
-                                        'length' => 100
+                                        'length' => 200
                                 ],
                                 'siteOnline' => [
                                         'type' => 'select',

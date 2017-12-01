@@ -18,6 +18,7 @@ return [
                 'anchor-active-attributes' => ['class' => 'active']
         ],
         'positions' => [
+                'unplaced' => 'Unplaced',
                 'main' => 'Main',
                 'footer' => 'Footer'
         ],

@@ -9,13 +9,11 @@
  */
 
 return [
-        'icon' => 'fa-th',
+        'icon' => 'fa-home',
         'tables' => [
-                'statics',
-                // 'descriptions',
+                'sliders',
         ],
         'panels' => [
-                'statics',
-                // 'descriptions',
+                'sliders',
         ]
 ];

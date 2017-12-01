@@ -15,8 +15,8 @@
                 <div class="col-md-6 col-sm-12 col-xs-12 pull-right">
                     <div class="top-contact-info">
                         <ul>
-                            <li class="toolbar-email"><i class="fa fa-envelope-o"></i> Support@designsvilla.com</li>
-                            <li class="toolbar-contact"><i class="fa fa-phone"></i> +92 123 456 7890</li>
+                            <li class="toolbar-email"><i class="fa fa-envelope-o"></i> {{ Wa::config('system.site.email') }}</li>
+                            <li class="toolbar-contact"><i class="fa fa-phone"></i> {{ Wa::config('system.site.phone') }}</li>
                         </ul>
                     </div>
                 </div>
@@ -27,70 +27,19 @@
         <div class="container">
             <!--Main Menu HTML Code-->
             <nav class="wsmenu slideLeft clearfix">
-                <div class="logo pull-left"><a href="index.html" title="Responsive Slide Menus"><img src="images/logo.png" alt="" /></a></div>
+                <div class="logo pull-left"><a href="{{ url('/') }}" title="Responsive Slide Menus"><img src="{{ URL::asset(Wa::config('system.site.logo')) }}" alt="" /></a></div>
                 <ul class="mobile-sub wsmenu-list pull-right">
-                    <li><a href="index.html" class="">Home</a>
+                    @foreach(Wa::menu()->main() as $menu)
+                    <li><a href="{{ url($menu->permalink) }}" class="{{ count($menu->getChild()) == 0 ? 'arrow':null }}">{{ $menu->title }}</a>
+                        @if(count($menu->getChild()) !== 0)
                         <ul class="wsmenu-submenu">
-                            <li><a href="index.html">Home 1</a></li>
-                            <li><a href="index-2.html">Home 2</a></li>
-                            <li><a href="index-3.html">Home 3</a></li>
-                            <li><a href="index-4.html">Home 4</a></li>
-                            <li><a href="index-5.html">Home 5</a></li>
-                            <li><a href="index-6.html">Home 6</a></li>
-                            <li><a href="index-7.html">Home 7</a></li>
-                            <li><a href="index-8.html">Home 8</a></li>
+                            @foreach($menu->getChild() as $sub)
+                                <li><a href="{{ url($sub->permalink) }}">{{ $sub->title }}</a></li>
+                            @endforeach
                         </ul>
+                        @endif
                     </li>
-                    <li><a href="pricing.html" class="">Pricing</a>
-                        <ul class="wsmenu-submenu">
-                            <li><a href="pricing.html">Pricing 1</a></li>
-                            <li><a href="pricing-2.html" class="">Pricing 2</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="category.html">categories <span class="arrow"></span></a></li>
-                    <li><a href="listing-archive.html">listings <span class="arrow"></span></a></li>
-                    <li><a href="#">Shortcodes <span class="arrow"></span></a>
-                        <div class="megamenu clearfix">
-                            <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
-                                <li><a href="sc-rs-slider1.html">Revolution Slider</a></li>
-                                <li><a href="sc-rs-slider2.html">Post Slider</a></li>
-                                <li><a href="sc-map.html">Geo Location Map</a></li>
-                                <li><a href="sc-services.html">Services</a></li>
-                                <li><a href="sc-locations.html">Locations</a></li>
-                            </ul>
-                            <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
-                                <li><a href="sc-category.html">Categories</a></li>
-                                <li><a href="sc-listing.html">Listings</a></li>
-                                <li><a href="sc-feature-carousel.html">Feature Listing</a></li>
-                                <li><a href="sc-testimonial.html">Testimonial</a></li>
-                            </ul>
-                            <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
-                                <li><a href="sc-funfacts.html">FunFacts Counter</a></li>
-                                <li><a href="sc-pricing.html">Pricing Tables</a></li>
-                                <li><a href="sc-blog.html">Blog Style</a></li>
-                                <li><a href="sc-callout.html">Callout</a></li>
-                            </ul>
-                            <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
-                                <li><a href="sc-sidebar.html">SideBars</a></li>
-                                <li><a href="sc-social.html">Social Styles</a></li>
-                                <li><a href="sc-partner.html">Partners</a></li>
-                                <li><a href="sc-search-form.html">Search Form</a></li>
-                            </ul>
-                        </div>
-                      </li>
-                    <li><a href="#">pages <span class="arrow"></span></a>
-                        <ul class="wsmenu-submenu">
-                            <li><a href="about.html">Features <span class="arrow"></span></a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="single.html">Blog Single</a></li>
-                            <li><a href="single-listing.html">listing Single</a></li>
-                            <li><a href="401.html">Error 401</a></li>
-                            <li><a href="403.html">Error 403</a></li>
-                            <li><a href="404.html">Error 404</a></li>
-
-                        </ul>
-                    </li>
-                  <li><a href="contact.html">Contact Us <span class="arrow"></span></a></li>
+                    @endforeach
                 </ul>
             </nav>
         </div>

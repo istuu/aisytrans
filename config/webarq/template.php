@@ -10,44 +10,36 @@
 
 return [
         'names' => [
-                'static' => [
-                        'name' => 'Static',
+                'home' => [
+                        'name' => 'Home',
                         'thumb' => ''
                 ],
-                'news' => [
-                        'name' => 'News',
+                'about' => [
+                        'name' => 'About',
                         'thumb' => ''
                 ],
-                'leads' => [
-                        'name' => 'Leads'
-                ]
+                'contact' => [
+                        'name' => 'Contact',
+                        'thumb' => ''
+                ],
         ],
         'sections' => [
-                'slide' => [
-                        'name' => 'Slide',
-                        'model' => 'slide',
+                'slider' => [
+                        'name' => 'Slider',
                         'limit' => 0,
-                        'panel' => 'slides'
-
-                ],
-                'static-pages' => [
-                        'name' => 'Static Pages',
-                        'view' => 'static',
-//                        'model' => 'page',
                         'table' => [
-                                'name' => 'pages',
-                                'translate' => ['title', 'intro', 'description']
-                        ],
-                        'panel' => 'pages',
-                        'limit' => 0,
-                        'paginate' => 1
+                                'name' => 'sliders',
+                                'sequence' => ['sequence'],
+                                'where' => ['is_active' => 1]
+                        ]
                 ],
-                'leads' => [
-                        'name' => 'Leads Form',
-                        'raw' => function() {
-                                return Wa::manager('site.lead', Wa::menu()->getActive()->lead)->toHtml();
-                        }
-                ]
+                'static' => [
+                        'name' => 'Static',
+                        'table' => [
+                                'name' => 'statics',
+                                'where' => ['is_active' => 1]
+                        ]
+                ],
         ],
         'modals' => [
                 'default' => 'Are you sure you want to do this?',

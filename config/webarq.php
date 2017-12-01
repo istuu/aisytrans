@@ -1,26 +1,16 @@
 <?php
-/**
- * Created by PhpStorm
- * Date: 19/10/2016
- * Time: 16:22
- * Author: Daniel Simangunsong
- *
- * Calm seas, never make skill full sailors
- */
-
-
 return [
 // Project information
         'projectInfo' => [
                 'author' => 'Daniel Simangunsong',
                 'codename' => 'Black Mamba',
                 'initDate' => 'January 01, 2016',
-                'name' => '<b>WEBARQ</b> Panel',
+                'name' => '<b>Aisytrans</b> Panel',
                 'version' => '2.3.8',
         ],
 
 // Active module
-        'modules' => ['system', 'section'],
+        'modules' => ['system', 'home', 'section'],
 
 // System default configuration
         'system' => [
@@ -46,7 +36,7 @@ return [
                 ],
                 'themes' => 'admin-lte',
                 'site' => [
-                        'name' => 'WEBARQ',
+                        'name' => 'Aisytrans',
                         'offline' => false,
                         'themes' => 'front-end',
                         'auto-template' => true
