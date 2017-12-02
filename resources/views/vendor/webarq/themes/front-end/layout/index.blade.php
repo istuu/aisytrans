@@ -61,6 +61,11 @@
 
         {!! Wa::getThemesView($shareThemes, 'common.header') !!}
         @yield('content')
+
+        @if(Wa::menu()->getActive()->template == 'contact')
+            {!! Wa::getThemesView($shareThemes, 'common.contact') !!}
+        @endif
+
         {!! Wa::getThemesView($shareThemes, 'common.footer') !!}
     </div>
 
@@ -99,7 +104,7 @@
 
 	<!--================================waypoint===========================================-->
 
-	<script type="text/javascript" src="js/jquery.waypoints.min.js"></script><!-- Countdown JS FILE -->
+	<!-- <script type="text/javascript" src="js/jquery.waypoints.min.js"></script><!-- Countdown JS FILE -->
 
 	<!--================================RATINGS===========================================-->
 
@@ -131,5 +136,6 @@
 	<!--================================custom script===========================================-->
 
 	<script type="text/javascript" src="{{ asset('frontend') }}/js/custom.js"></script>
+    @stack('view-script')
 </body>
 </html>

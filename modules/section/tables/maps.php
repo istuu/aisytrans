@@ -9,14 +9,13 @@
 return [
         ['master' => 'id'],
         ['master' => 'title', 'name' => 'section_id', 'notnull' => true],
-        ['master' => 'title', 'multilingual' => true],
-        ['master' => 'description', 'notnull' => false, 'name' => 'highlight', 'multilingual' => true],
-        ['master' => 'description', 'notnull' => false, 'name' => 'description', 'multilingual' => true],
-        ['master' => 'sequence'],
+        ['master' => 'title'],
+        ['master' => 'title', 'name' => 'latitude'],
+        ['master' => 'title', 'name' => 'longitude'],
         ['master' => 'falseBool', 'name' => 'is_active'],
         'timestamps' => true,
         'history' => [
-            'group' => 'descriptions',
+            'group' => 'maps',
             'item' => 'title'
         ],
 ];

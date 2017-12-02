@@ -5,33 +5,33 @@
 
  var isMobile = {
     Android: function() {
-     
+
       return navigator.userAgent.match(/Android/i);
     },
     BlackBerry: function() {
-    
+
       return navigator.userAgent.match(/BlackBerry/i);
     },
     iOS: function() {
-     
+
       return navigator.userAgent.match(/iPhone|iPad|iPod/i);
     },
     Opera: function() {
-     
+
       return navigator.userAgent.match(/Opera Mini/i);
     },
     Windows: function() {
-     
+
       return navigator.userAgent.match(/IEMobile/i);
     },
     any: function() {
-     
+
       return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
 
 /*-- Page preloader --*/
-			
+
 	$(window).load(function(){
 		$('.preloader').delay(2000).fadeOut(1000);
 	});
@@ -56,9 +56,9 @@
                 shadow:0,
                 spinner:"spinner4",
                 hideTimerBar:"on"
-				
+
             });
-			
+
 			/*-- listing detail page tabs --*/
 
 			$('.tabs .tab-link').on('click', function(){
@@ -70,19 +70,19 @@
 				$(this).addClass('current');
 				$("#"+tab_id).addClass('current');
 				if(tab_id === 'tab-2'){
-					
+
 					init();
 				}
 			});
-			
+
 			/*-- onepage active menu --*/
-			
+
 			$('ul.menu li a').on('click', function() {
 				var $this = $(this);
 				$this.parent().siblings().removeClass('active').end().addClass('active');
-    
+
 			});
-			
+
 			$('.view-switcher ul li').on('click',function(e) {
 				if ($(this).hasClass('listview')) {
 					$('.listing-main').removeClass('gridview').addClass('listview');
@@ -101,7 +101,7 @@
 					$('.view-switcher ul li.gridview').addClass('active');
 				}
 			});
-			
+
 			$( "#slider-range-min" ).slider({
 				  range: "min",
 				  value: 700,
@@ -112,24 +112,6 @@
 				  }
 			});
 			$( "#amount" ).val( "$" + $( "#slider-range-min" ).slider( "value" ) );
-			
-			/*-----------------------------------
-			FUNFACTSs
-			-----------------------------------*/
-				$('.count').waypoint(function() {  
-					// start all the timers
-					$('.count').each(count);
-				  
-						function count(options) {
-				  
-						var $this = $(this);
-						options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-						$this.countTo(options);
-						}
-				},
-				{
-					offset: '70%',  // middle of the page
-					triggerOnce: true	
-				});
-			
+
+
     });

@@ -14,7 +14,8 @@ return [
         'icon' => 'fa-gears',
         'tables' => [
                 'histories', 'permissions', 'configurations', 'admins', 'admin_roles', 'roles', 'menus',
-                'menu_positions', 'sections', 'admin_password_resets'
+                'menu_positions', 'sections',
+                'socials', 'admin_password_resets'
         ],
         'panels' => [
                 'dashboard' => [
@@ -32,6 +33,7 @@ return [
                 'roles',
                 'menus',
                 'sections',
-                'localization'
+                'socials',
+                // 'localization'
         ],
 ];

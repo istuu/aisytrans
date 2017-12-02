@@ -5,10 +5,9 @@
                 <div class="col-md-6 col-sm-12 col-xs-12 pull-left">
                     <div class="social-content">
                         <ul class="social-links">
-                            <li><a class="linkedin" href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a class="twitter" href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a class="facebook" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a class="youtube" href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                            @foreach($socials as $soc)
+                                <li><a class="facebook" href="{{ url($soc->permalink) }}" target="_blank"><i class="fa {{ $soc->icon }}"></i></a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

@@ -12,10 +12,14 @@ return [
         'icon' => 'fa-th',
         'tables' => [
                 'statics',
-                // 'descriptions',
+                'features',
+                'partners',
+                'maps',
         ],
         'panels' => [
                 'statics',
-                // 'descriptions',
+                'features',
+                'partners',
+                'maps',
         ]
 ];

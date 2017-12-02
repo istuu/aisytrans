@@ -128,6 +128,18 @@ return [
                                         'rules' => 'required|max:150',
                                         'title' => 'Phone Number'
                                 ],
+                                'siteFooterDescription' => [
+                                        'type' => 'textarea',
+                                        'title' => 'Footer Description'
+                                ],
+                                'siteFooterButton' => [
+                                        'type' => 'text',
+                                        'title' => 'Footer Button'
+                                ],
+                                'siteFooterPermalink' => [
+                                        'type' => 'text',
+                                        'title' => 'Footer Permalink'
+                                ],
                                 'siteCopyright' => [
                                         'type' => 'text',
                                         'length' => 200

@@ -2,15 +2,15 @@
 return [
 // Project information
         'projectInfo' => [
-                'author' => 'Daniel Simangunsong',
-                'codename' => 'Black Mamba',
-                'initDate' => 'January 01, 2016',
+                'author' => 'Aisytrans',
+                'codename' => 'Franz Kafka',
+                'initDate' => 'Desember 01, 2017',
                 'name' => '<b>Aisytrans</b> Panel',
                 'version' => '2.3.8',
         ],
 
 // Active module
-        'modules' => ['system', 'home', 'section'],
+        'modules' => ['system', 'home', 'section', 'database'],
 
 // System default configuration
         'system' => [

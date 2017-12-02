@@ -40,6 +40,31 @@ return [
                                 'where' => ['is_active' => 1]
                         ]
                 ],
+                'feature' => [
+                        'name' => 'Feature',
+                        'limit' => 0,
+                        'table' => [
+                                'name' => 'features',
+                                'sequence' => ['sequence'],
+                                'where' => ['is_active' => 1]
+                        ]
+                ],
+                'partner' => [
+                        'name' => 'Partner',
+                        'limit' => 0,
+                        'table' => [
+                                'name' => 'partners',
+                                'sequence' => ['sequence'],
+                                'where' => ['is_active' => 1]
+                        ]
+                ],
+                'map' => [
+                        'name' => 'Map',
+                        'table' => [
+                                'name' => 'maps',
+                                'where' => ['is_active' => 1]
+                        ]
+                ],
         ],
         'modals' => [
                 'default' => 'Are you sure you want to do this?',
