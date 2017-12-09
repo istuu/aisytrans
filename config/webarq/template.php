@@ -14,6 +14,10 @@ return [
                         'name' => 'Home',
                         'thumb' => ''
                 ],
+                'packages' => [
+                        'name' => 'Packages',
+                        'thumb' => ''
+                ],
                 'about' => [
                         'name' => 'About',
                         'thumb' => ''

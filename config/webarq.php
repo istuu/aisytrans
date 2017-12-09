@@ -10,7 +10,7 @@ return [
         ],
 
 // Active module
-        'modules' => ['system', 'home', 'section', 'database'],
+        'modules' => ['system', 'home', 'section', 'package', 'database'],
 
 // System default configuration
         'system' => [
