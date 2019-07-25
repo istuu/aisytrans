@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'webarq',
+        'guard' => 'web',
         'passwords' => 'users',
     ],
 
@@ -40,10 +40,7 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'webarq' => [
-            'driver' => 'session',
-            'provider' => 'webarq',
-        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -71,9 +68,6 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
-        ],
-        'webarq' => [
-            'driver' => 'watchdog',
         ],
 
         // 'users' => [
